@@ -1,15 +1,10 @@
 ---
-- name: Install dependend python package
-  apt:
-    name: [ python-requests ]
-    state: latest
-
 - name: manage uptimerobot monitor entries
   tags: uptimerobot
   uptimerobot:
     api_key: "{{ uptimerobot_api_key }}"
-    name: "{{ item.name }} {{ inventory_hostname }}"
-    url: "{{ item.url }}?{{ inventory_hostname }}"
+    name: "{{ item.name }}"
+    url: "{{ item.url }}"
     alert_contacts: "{{ alert_contacts }}"
     state: "{{ item.state }}"
   with_items:

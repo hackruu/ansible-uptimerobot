@@ -1,0 +1,10 @@
+---
+
+- hosts: uptimerobot_servers
+  roles:
+    - uptimerobot
+    - cron-monitoring
+
+- hosts: localhost
+  roles:
+    - uptimerobot_localhost

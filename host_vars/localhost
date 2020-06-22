@@ -1,0 +1,4 @@
+---
+uptimerobot_targets:
+  - { name: "kvdb somerouter", url: "https://herokuappname.herokuapp.com/?somerouter", state: "present"}
+  - { name: "kvdb iiotdevice", url: "https://herokuappname.herokuapp.com/?iiotdevice", state: "present"}

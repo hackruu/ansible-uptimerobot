@@ -1,0 +1,22 @@
+---
+
+###########################
+# Cron.
+###########################
+
+- name: Enable cron
+  service:
+    name: cron
+    state: started
+    enabled: yes
+  ignore_errors: yes
+
+- name: Install crons to cron.d if any
+  template:
+    src: "{{ item }}"
+    dest: /etc/cron.d/
+  with_fileglob:
+  - ../templates/all/*
+  ignore_errors: yes
+  notify:
+  - restart cron

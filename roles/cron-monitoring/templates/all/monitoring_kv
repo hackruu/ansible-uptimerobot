@@ -1,0 +1,2 @@
+# {{ ansible_managed }}
+* * * * * root curl "https://herokuappname.herokuapp.com/?$(hostname -f)=$(curl ifconfig.me)" 2>/dev/null
